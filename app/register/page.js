@@ -7,8 +7,8 @@ import TopLogoAmero from "../components/TopLogoAmero";
 import BtnHexagonAmero from "../components/BtnHexagonAmero";
 import { useRouter } from 'next/navigation';
 
-import { Merriweather} from "next/font/google";
-const merriweather = Merriweather({ subsets: ["latin"], weight: ['400','700'] });
+import { Poppins} from "next/font/google";
+const poppins = Poppins({ subsets: ["latin"], weight: ['400','700', '900'] });
 
 export default function Register() {
     const router = useRouter();
@@ -38,12 +38,12 @@ export default function Register() {
         }, 250);
     }
     return (
-        <main className="flex fixed h-full w-full bg-kai overflow-auto flex-col items-center pt-2 pb-5 px-5 lg:pt-12 lg:px-20">
+        <main className="flex fixed h-full w-full bg-kai overflow-auto flex-col items-center pt-4 pb-5 px-5 lg:pt-12 lg:px-20">
             <TopLogoAmero></TopLogoAmero>
-            <h1 className={`text-center text-xl font-bold mt-[-.7rem] lg:mt-0 lg:text-5xl lg:mb-5 ${merriweather.className}`}>REGISTRATION</h1>
+            <h1 className={`text-center text-3xl font-bold mt-2 lg:mt-0 lg:text-5xl mb-5 lg:mb-5 ${poppins.className}`}>REGISTRATION</h1>
             <div className="relative w-full flex flex-col justify-center items-center mt-12 mb-14">
                 <div className='relative w-[80%] mb-14 lg:mb-20'>
-                    <label htmlFor="name" className={`text-light font-bold text-2xl lg:text-5xl mb-4 lg:mb-8 block ${merriweather.className}`}>Full Name</label>
+                    <label htmlFor="name" className={`text-light font-bold text-2xl lg:text-5xl mb-4 lg:mb-8 block ${poppins.className}`}>Full Name</label>
                     <div className='relative w-full'>
                         <Image
                             src='/amero/icon-user.png'
@@ -57,7 +57,7 @@ export default function Register() {
                             value={payload.name}
                             id='name'
                             name='name'
-                            className={`w-full rounded-lg font-semibold text-2xl lg:text-5xl outline-none py-6 lg:py-8 pr-3 pl-14 lg:pl-24 text-black bg-light ${merriweather.className}`}
+                            className={`w-full rounded-lg font-semibold text-2xl lg:text-5xl outline-none py-6 lg:py-8 pr-3 pl-14 lg:pl-24 text-black bg-light ${poppins.className}`}
                             placeholder='Your Name'
                             onChange={handleChange}
                         />
@@ -65,8 +65,8 @@ export default function Register() {
                     {/* {payload.name} */}
                     {/* {errorMsg && <p className='text-[#E00A0A] text-xs'>{errorMsg}</p>} */}
                 </div>
-                <div className='relative w-[80%] mb-14'>
-                    <label htmlFor="name" className={`text-light font-bold text-2xl lg:text-5xl mb-4 lg:mb-8 block ${merriweather.className}`}>Phone Number</label>
+                <div className='relative w-[80%] mb-10'>
+                    <label htmlFor="name" className={`text-light font-bold text-2xl lg:text-5xl mb-4 lg:mb-8 block ${poppins.className}`}>Phone Number</label>
                     <div className='relative w-full'>
                         <Image
                             src='/amero/icon-call.png'
@@ -75,13 +75,13 @@ export default function Register() {
                             className='absolute left-4 top-1/2 -translate-y-1/2 lg:w-[55px]'
                             alt='icon'
                         />
-                        <p className={`absolute left-[3.5rem] lg:left-[5rem] top-1/2 font-bold text-2xl lg:text-5xl text-black -translate-y-1/2 ${merriweather.className}`}>+62</p>
+                        <p className={`absolute left-[3.5rem] lg:left-[5rem] top-1/2 font-bold text-2xl lg:text-5xl text-black -translate-y-1/2 ${poppins.className}`}>+62</p>
                         <input
                             type='number'
                             value={payload.phone}
                             id='phone'
                             name='phone'
-                            className={`w-full rounded-lg font-semibold text-2xl lg:text-5xl outline-none py-6 lg:py-8 pr-3 pl-32 lg:pl-48 text-black bg-light ${merriweather.className}`}
+                            className={`w-full rounded-lg font-semibold text-2xl lg:text-5xl outline-none py-6 lg:py-8 pr-3 pl-32 lg:pl-48 text-black bg-light ${poppins.className}`}
                             placeholder='Your number'
                             onChange={handleChange}
                         />

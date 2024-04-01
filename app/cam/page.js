@@ -3,8 +3,8 @@
 import { useEffect, useRef, useState, useMemo } from 'react';
 import Image from "next/image";
 import TopLogoAmero from "../components/TopLogoAmero";
-import { Merriweather} from "next/font/google";
-const merriweather = Merriweather({ subsets: ["latin"], weight: ['400','700'] });
+import { Poppins} from "next/font/google";
+const poppins = Poppins({ subsets: ["latin"], weight: ['400','700', '900'] });
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
@@ -105,9 +105,9 @@ export default function Cam() {
         setEnabled(false)
     }
     return (
-        <main className="flex fixed h-full w-full bg-amero overflow-auto flex-col items-center pt-2 pb-5 px-5 lg:pt-12 lg:px-20">
+        <main className="flex fixed h-full w-full bg-kai overflow-auto flex-col items-center pt-2 pb-5 px-5 lg:pt-12 lg:px-20">
             <TopLogoAmero></TopLogoAmero>
-            <h1 className={`text-center text-xl font-bold mt-[-.7rem] lg:mt-0 lg:text-5xl lg:mb-8 ${merriweather.className}`}>SAY &#34;CHEESEE&#34;</h1>
+            <h1 className={`text-center text-3xl font-bold mt-2 lg:mt-0 lg:text-5xl mb-5 lg:mb-5 ${poppins.className}`}>SAY &#34;CHEESEE&#34;</h1>
             <div className="relative w-full flex flex-col justify-center items-center mt-2 mb-3 lg:mt-8 lg:mb-10">
                 <div className='relative lg:w-full'>
                     {/* {!enabled && 
@@ -159,14 +159,14 @@ export default function Cam() {
             {!enabled && 
                 <div className="relative w-full flex justify-center items-center">
                     <button className="relative mx-auto flex  w-[60%] justify-center items-center" onClick={captureVideo}>
-                        <Image src='/amero/btn-capture.png' width={410} height={96} alt='Zirolu' className='w-full' priority />
+                        <Image src='/kai/btn-capture.png' width={410} height={96} alt='Zirolu' className='w-full' priority />
                     </button>
                 </div>
             }
             <div className={`relative w-full ${!enabled ? 'hidden' : ''}`}>
                 <div className="relative w-[60%] mx-auto flex justify-center items-center flex-col mt-0 lg:mt-5">
                     <Link href='/generate' className="block w-full relative mx-auto flex justify-center items-center">
-                        <Image src='/amero/btn-next.png' width={410} height={96} alt='Zirolu' className='w-full' priority />
+                        <Image src='/kai/btn-next.png' width={410} height={96} alt='Zirolu' className='w-full' priority />
                     </Link>
                     {/* <button className="relative mx-auto flex justify-center items-center">
                         <Image src='/btn-download.png' width={820} height={192} alt='Zirolu' className='w-full' priority />

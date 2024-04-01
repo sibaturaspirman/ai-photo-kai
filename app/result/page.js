@@ -2,13 +2,13 @@
 
 import Link from 'next/link';
 import Image from "next/image";
-import TopLogoAmeroSmall from "../components/TopLogoAmeroSmall";
+import TopLogoAmero from "../components/TopLogoAmero";
 import { getCookie } from 'cookies-next';
 import React,{ useEffect, useState, useRef } from 'react';
 import { useQRCode } from 'next-qrcode';
 // import io from 'socket.io-client';
-import { Merriweather} from "next/font/google";
-const merriweather = Merriweather({ subsets: ["latin"], weight: ['400','700'] });
+import { Poppins} from "next/font/google";
+const poppins = Poppins({ subsets: ["latin"], weight: ['400','700', '900'] });
 import BtnHexagon2 from "../components/BtnHexagon2";
 import ReactToPrint from "react-to-print";
 
@@ -290,8 +290,8 @@ export default function Result() {
     }
 
     return (
-        <main className="flex fixed h-full w-full bg-amero overflow-auto flex-col items-center justify-top pt-2 pb-5 px-5 lg:pt-12 lg:px-20">
-            <TopLogoAmeroSmall></TopLogoAmeroSmall>
+        <main className="flex fixed h-full w-full bg-kai overflow-auto flex-col items-center justify-top pt-2 pb-5 px-5 lg:pt-12 lg:px-20">
+            {/* <TopLogoAmero></TopLogoAmero> */}
             {/* QR */}
             {sendEmailGak &&
                 <div className='absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center mt-0 flex-col z-50 bg-black bg-opacity-90'>
@@ -342,7 +342,7 @@ export default function Result() {
             }
             {generateQR && 
                 <div className='absolute top-0 left-0 right-0 bottom-0 flex items-center justify-top mt-24 lg:mt-64 flex-col z-40 bg-black bg-opacity-0'>
-                    <h1 className={`text-center text-xl mt-[-.7rem] lg:mt-0 lg:text-4xl lg:mb-5 ${merriweather.className}`}>SCAN QR CODE</h1>
+                    <h1 className={`text-center text-3xl font-bold mt-[-.7rem] lg:mt-0 lg:text-4xl lg:mb-5 ${poppins.className}`}>SCAN QR CODE</h1>
                     <div className='relative mt-3 w-[60%] mx-auto flex items-center justify-center canvas-qr' onClick={()=>{setGenerateQR(null)}}>
                         <Canvas
                         text={linkQR}
@@ -358,7 +358,7 @@ export default function Result() {
                         }}
                         />
                     </div>
-                    <p className={`text-center font-semibold text-sm lg:text-4xl mt-10 ${merriweather.className}`}>Scan this QR Code to Download your image.</p>
+                    <p className={`text-center font-semibold text-2xl lg:text-4xl mt-10 ${poppins.className}`}>Scan this QR Code to Download your image.</p>
 
                     {/* <div className={`relative w-full  ${showEmail ? 'hidden' : ''}`}>
                     <div className="relative w-[60%] mx-auto flex justify-center items-center flex-col mt-5">
@@ -377,9 +377,9 @@ export default function Result() {
             {/* QR */}
 
             <div className={generateQR ? `opacity-0 pointer-events-none` : ''}>
-                <h1 className={`text-center text-xl font-bold mt-[-.7rem] lg:mt-0 lg:text-5xl lg:mb-8 ${merriweather.className}`}>YOU LOOKS AMAZING!</h1>
+                <h1 className={`text-center text-2xl font-bold mt-5 lg:mt-0 lg:text-5xl mb-5 lg:mb-5 ${poppins.className}`}>YOU LOOKS AMAZING!</h1>
                 {imageResultAI && 
-                <div className='relative w-[58%] mt-4 mx-auto flex justify-center items-center  border-2 border-[#ffffff] rounded-sm' onClick={downloadImageAI}>
+                <div className='relative w-[55%] mt-4 mx-auto flex justify-center items-center  border-2 border-[#ffffff] rounded-sm' onClick={downloadImageAI}>
                     <div className='relative' id='capture' ref={(el) => (componentRef = el)}>
                         {/* <img src={imageResultAI} className='block'></img> */}
                         <Image src={imageResultAI}  width={420} height={689} alt='Zirolu' className='relative block w-full'></Image> 
@@ -415,7 +415,7 @@ export default function Result() {
                         <div className={`w-full mt-5`}>
                             <div className="relative w-[50%] mx-auto flex justify-center items-center flex-col">
                                 <div className="block w-full relative mx-auto flex justify-center items-center">
-                                    <Image src='/amero/btn-download-print.png' width={410} height={96} alt='Zirolu' className='w-full' priority />
+                                    <Image src='/kai/btn-download.png' width={480} height={96} alt='Zirolu' className='w-full' priority />
                                 </div>
                             </div>
                         </div>

@@ -11,10 +11,10 @@ const BtnHexagonAmero = ({ disabled, onClick}) => {
       <Image
         src={
           !disabled
-            ? '/amero/btn-register.png'
-            : '/amero/btn-register-disable.png'
+            ? '/kai/btn-register.png'
+            : '/kai/btn-register-disable.png'
         }
-        width={410}
+        width={480}
         height={96}
         className='w-full'
         alt='Zirolu'

@@ -6,8 +6,8 @@ import { useEffect, useState, useMemo } from 'react';
 import TopLogoAmero from "../components/TopLogoAmero";
 import TopLogoLavani from "../components/TopLogoLavani";
 import TopLogoMorraine from "../components/TopLogoMorraine";
-import { Merriweather} from "next/font/google";
-const merriweather = Merriweather({ subsets: ["latin"], weight: ['400','700'] });
+import { Poppins} from "next/font/google";
+const poppins = Poppins({ subsets: ["latin"], weight: ['400','700', '900'] });
 import { useRouter } from 'next/navigation';
 // import io from 'socket.io-client';
 
@@ -259,17 +259,9 @@ export default function GenerateAmero() {
     };
 
     return (
-        <main className="flex fixed h-full w-full bg-amero overflow-auto flex-col items-center justify-top pt-2 pb-5 px-5 lg:pt-12 lg:px-20">
-            <div className={`w-full ${character == 'lavani' || character == 'morraine' ? 'hidden' : ''}`}>
-                <TopLogoAmero></TopLogoAmero>
-            </div>
-            <div className={`w-full ${character == 'lavani' ? '' : 'hidden'}`}>
-                <TopLogoLavani></TopLogoLavani>
-            </div>
-            <div className={`w-full ${character == 'morraine' ? '' : 'hidden'}`}>
-                <TopLogoMorraine></TopLogoMorraine>
-            </div>
-            <h1 className={`text-center text-xl font-bold mt-[-.7rem] lg:mt-0 lg:text-5xl lg:mb-8 ${merriweather.className} ${numProses1 ? 'opacity-0 pointer-events-none' : ''}`}>CHOOSE YOUR STYLE</h1>
+        <main className="flex fixed h-full w-full bg-kai overflow-auto flex-col items-center justify-top pt-2 pb-5 px-5 lg:pt-12 lg:px-20">
+            <TopLogoAmero></TopLogoAmero>
+            <h1 className={`text-center text-3xl font-bold mt-2 lg:mt-0 lg:text-5xl mb-5 lg:mb-5 ${poppins.className} ${numProses1 ? 'opacity-0 pointer-events-none' : ''}`}>CHOOSE GENDER</h1>
             {/* LOADING */}
             {numProses1 && 
                 <div className='absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center flex-col'>
@@ -315,7 +307,7 @@ export default function GenerateAmero() {
                 </div> */}
                 <div className='relative mt-2 lg:mt-10 w-full'>
                     <div className='relative w-full hiddenx'>
-                        <label htmlFor="choose_gender" className={`block mb-0 lg:mb-5 lg:text-5xl text-center font-bold text-white ${merriweather.className}`}>I am</label>
+                        <label htmlFor="choose_gender" className={`block mb-0 lg:mb-5 lg:text-5xl text-center font-bold text-white ${poppins.className}`}>I am</label>
                         <div>
                             {/* GENDER FIX */}
                             <ul className='choose2-amero'>
@@ -343,7 +335,7 @@ export default function GenerateAmero() {
                         </div>
                     </div>
                     <div className='relative w-full mt-8 lg:mt-20'>
-                        <label htmlFor="choose_style1" className={`block mb-0 lg:mb-5 lg:text-5xl text-center font-bold text-white ${merriweather.className}`}>Pick Your Style</label>
+                        <label htmlFor="choose_style1" className={`block mb-0 lg:mb-5 lg:text-5xl text-center font-bold text-white ${poppins.className}`}>Pick Your Style</label>
                         <div className='overflow-auto lg:px-2'>
                             {/* STYLE SEMENTARA */}
                             <ul className='choose-amero'>
@@ -415,8 +407,8 @@ export default function GenerateAmero() {
 
                 {styleGender && character &&
                     <div className="relative w-full flex justify-center items-center lg:mt-10">
-                        <button className="relative mx-auto w-[70%] flex justify-center items-center" onClick={generateAI}>
-                            <Image src='/amero/btn-generate.png' width={410} height={96} alt='Zirolu' className='w-full' priority />
+                        <button className="relative mx-auto w-[60%] flex justify-center items-center" onClick={generateAI}>
+                            <Image src='/kai/btn-generate.png' width={480} height={96} alt='Zirolu' className='w-full' priority />
                         </button>
                     </div>
                 }
