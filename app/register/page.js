@@ -46,7 +46,7 @@ export default function Register() {
                     <label htmlFor="name" className={`text-light font-bold text-2xl lg:text-5xl mb-4 lg:mb-8 block ${poppins.className}`}>Full Name</label>
                     <div className='relative w-full'>
                         <Image
-                            src='/amero/icon-user.png'
+                            src='/kai/icon-user.png'
                             width={32}
                             height={32}
                             className='absolute left-4 top-1/2 -translate-y-1/2 lg:w-[55px]'
@@ -69,7 +69,7 @@ export default function Register() {
                     <label htmlFor="name" className={`text-light font-bold text-2xl lg:text-5xl mb-4 lg:mb-8 block ${poppins.className}`}>Phone Number</label>
                     <div className='relative w-full'>
                         <Image
-                            src='/amero/icon-call.png'
+                            src='/kai/icon-call.png'
                             width={32}
                             height={32}
                             className='absolute left-4 top-1/2 -translate-y-1/2 lg:w-[55px]'
