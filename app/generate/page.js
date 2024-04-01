@@ -78,29 +78,13 @@ export default function GenerateAmero() {
         // console.log(styleGender)
         // console.log(character)
         
-        if(character == 'morraine' && styleGender =='woman'){
+        if(styleGender =='male'){
             setTimeout(() => {
-                generateImageSwap(character, styleGender, getRandomInt(0, 19))
+                generateImageSwap(styleGender, getRandomInt(0, 11))
             }, 500);
-        }else if(character == 'morraine' && styleGender =='hijab'){
+        }else if(styleGender =='female'){
             setTimeout(() => {
-                generateImageSwap(character, styleGender, getRandomInt(0, 4))
-            }, 500);
-        }else if(character == 'lavani' && styleGender =='woman'){
-            setTimeout(() => {
-                generateImageSwap(character, styleGender, getRandomInt(0, 26))
-            }, 500);
-        }else if(character == 'lavani' && styleGender =='hijab'){
-            setTimeout(() => {
-                generateImageSwap(character, styleGender, getRandomInt(0, 12))
-            }, 500);
-        }else if(character == 'amero' && styleGender =='woman'){
-            setTimeout(() => {
-                generateImageSwap(character, styleGender, getRandomInt(0, 19))
-            }, 500);
-        }else if(character == 'amero' && styleGender =='hijab'){
-            setTimeout(() => {
-                generateImageSwap(character, styleGender, getRandomInt(0, 4))
+                generateImageSwap(styleGender, getRandomInt(0, 10))
             }, 500);
         }
 
@@ -198,10 +182,10 @@ export default function GenerateAmero() {
     }))
 
 
-    const generateImageSwap = async (brand, gender, number) => {
+    const generateImageSwap = async (gender, number) => {
         // console.log(gender)
         // console.log(number)
-        const urlGambar = 'https://ai-photo-kai.vercel.app/amero/style/'+brand+'/'+gender+'-'+number+'.jpeg'
+        const urlGambar = 'https://ai-photo-kai.vercel.app/kai/style/'+gender+'-'+number+'.jpeg'
         console.log(urlGambar)
         setNumProses(2)
         reset2();
@@ -398,6 +382,9 @@ export default function GenerateAmero() {
                             </ul>
                         </div>
                     </div> */}
+                    <div className='relative w-full mt-8 mb-10'>
+                        <Image src='/kai/list-style.png' width={1840} height={198} alt='Zirolu' className='w-full' priority />
+                    </div>
                 </div>
                 {/* {prompt} */}
                 {/* {promptCombine} */}
