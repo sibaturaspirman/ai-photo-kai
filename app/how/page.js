@@ -11,7 +11,7 @@ export default function How() {
             <TopLogoAmero></TopLogoAmero>
             <h1 className={`text-center text-3xl font-bold mt-2 lg:mt-0 lg:text-5xl mb-5 lg:mb-5 ${poppins.className}`}>HOW TO</h1>
             <div className="relative w-full flex flex-col justify-center items-center mt-3 mb-3">
-                <div className='relative w-[55%] mb-8 lg:mb-12'>
+                <div className='relative w-[58%] mb-8 lg:mb-12'>
                     <Image src='/kai/how-to.png' width={550} height={651} alt='Zirolu' className='w-full' priority />
                 </div>
             </div>
