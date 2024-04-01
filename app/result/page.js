@@ -111,7 +111,8 @@ export default function Result() {
             body: JSON.stringify({
                 name:payload.name,
                 phone:payload.phone,
-                image:linkQR
+                image:linkQR,
+                location:'Gambir'
             }),
             headers: {
                 'Authorization': 'de2e0cc3-65da-48a4-8473-484f29386d61:xZC8Zo4DAWR5Yh6Lrq4QE3aaRYJl9lss',
@@ -120,7 +121,7 @@ export default function Result() {
             }
         };
         
-        await fetch('https://photo-ai-iims.zirolu.id/v1/amero', options)
+        await fetch('https://photo-ai-iims.zirolu.id/v1/kai', options)
             // .then(response => response.json())
             .then(response => {
                 // console.log(response)
