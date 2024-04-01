@@ -207,6 +207,13 @@ body{
   height: auto !important;
 }
 
+/* KAI */
+.bg-kai{
+  background-image: url(../public/kai/bg.jpeg);
+  background-size: cover;
+  background-position: top center;
+}
+
 /* AMERO */
 .bg-amero{
   background-image: url(../public/amero/bg.jpeg);

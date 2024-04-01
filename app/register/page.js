@@ -38,7 +38,7 @@ export default function Register() {
         }, 250);
     }
     return (
-        <main className="flex fixed h-full w-full bg-amero overflow-auto flex-col items-center pt-2 pb-5 px-5 lg:pt-12 lg:px-20">
+        <main className="flex fixed h-full w-full bg-kai overflow-auto flex-col items-center pt-2 pb-5 px-5 lg:pt-12 lg:px-20">
             <TopLogoAmero></TopLogoAmero>
             <h1 className={`text-center text-xl font-bold mt-[-.7rem] lg:mt-0 lg:text-5xl lg:mb-5 ${merriweather.className}`}>REGISTRATION</h1>
             <div className="relative w-full flex flex-col justify-center items-center mt-12 mb-14">
