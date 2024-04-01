@@ -107,7 +107,7 @@ export default function Cam() {
     return (
         <main className="flex fixed h-full w-full bg-kai overflow-auto flex-col items-center pt-2 pb-5 px-5 lg:pt-12 lg:px-20">
             <TopLogoAmero></TopLogoAmero>
-            <h1 className={`text-center text-3xl font-bold mt-2 lg:mt-0 lg:text-5xl mb-5 lg:mb-5 ${poppins.className}`}>SAY &#34;CHEESEE&#34;</h1>
+            <h1 className={`text-center text-3xl font-bold mt-2 lg:mt-0 lg:text-5xl mb-2 lg:mb-5 ${poppins.className}`}>SAY &#34;CHEESEE&#34;</h1>
             <div className="relative w-full flex flex-col justify-center items-center mt-2 mb-3 lg:mt-8 lg:mb-10">
                 <div className='relative lg:w-full'>
                     {/* {!enabled && 
@@ -125,12 +125,12 @@ export default function Cam() {
                     }
 
                     {!enabled && 
-                    <div className='w-[80%] mx-auto absolute left-0 right-0 bottom-0 z-10'>
+                    <div className='w-[70%] mx-auto absolute left-0 right-0 bottom-0 z-10'>
                         <Image src='/frame-pose.png' width={426} height={461} alt='Zirolu' className='w-full' priority />
                     </div>
                     }
 
-                    <video ref={videoRef} className={`w-[80%] lg:w-full mx-auto border-2 border-[#ffffff] rounded-sm ${enabled ? 'absolute opacity-0':'relative'}`} playsInline height={512}></video>
+                    <video ref={videoRef} className={`w-[70%] lg:w-full mx-auto border-2 border-[#ffffff] rounded-sm ${enabled ? 'absolute opacity-0':'relative'}`} playsInline height={512}></video>
                     <canvas ref={previewRef} width="512" height="512" className={`${enabled ? 'relative':'absolute opacity-0'} w-[80%] lg:w-full top-0 left-0 right-0 mx-auto pointer-events-nones border-2 border-[#ffffff] rounded-sm`}></canvas>
                 </div>
             </div>
