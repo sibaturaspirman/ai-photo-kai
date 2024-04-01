@@ -185,7 +185,7 @@ export default function GenerateAmero() {
     const generateImageSwap = async (gender, number) => {
         // console.log(gender)
         // console.log(number)
-        const urlGambar = 'https://ai-photo-kai.vercel.app/kai/style/'+gender+'-'+number+'.jpeg'
+        const urlGambar = 'https://ai.mudikbersamakai.com/kai/style/'+gender+'-'+number+'.jpeg'
         console.log(urlGambar)
         setNumProses(2)
         reset2();
