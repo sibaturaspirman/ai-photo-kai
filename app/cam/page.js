@@ -137,7 +137,7 @@ export default function Cam() {
 
 
             {!enabled && 
-                <p className='block text-center text-sm lg:text-4xl mt-1 mb-3 lg:mt-4 text-white'>*Ikuti garis pose dan tidak terlalu zoom</p> 
+                <p className='block text-center text-xl lg:text-4xl mt-1 mb-3 lg:mt-4 text-white'>*Ikuti garis pose dan tidak terlalu zoom</p> 
             }
             
             {/* <div className="py-5 flex items-center justify-center">

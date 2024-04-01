@@ -215,11 +215,11 @@ body{
 }
 
 /* AMERO */
-.bg-amero{
+/* .bg-amero{
   background-image: url(../public/amero/bg.jpeg);
   background-size: cover;
   background-position: center;
-}
+} */
 
 .choose-amero{
   display: flex;
