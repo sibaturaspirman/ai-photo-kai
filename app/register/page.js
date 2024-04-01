@@ -41,7 +41,7 @@ export default function Register() {
         <main className="flex fixed h-full w-full bg-kai overflow-auto flex-col items-center pt-4 pb-5 px-5 lg:pt-12 lg:px-20">
             <TopLogoAmero></TopLogoAmero>
             <h1 className={`text-center text-3xl font-bold mt-2 lg:mt-0 lg:text-5xl mb-5 lg:mb-5 ${poppins.className}`}>REGISTRATION</h1>
-            <div className="relative w-full flex flex-col justify-center items-center mt-12 mb-14">
+            <div className="relative w-full flex flex-col justify-center items-center mt-6 mb-6">
                 <div className='relative w-[80%] mb-14 lg:mb-20'>
                     <label htmlFor="name" className={`text-light font-bold text-2xl lg:text-5xl mb-4 lg:mb-8 block ${poppins.className}`}>Full Name</label>
                     <div className='relative w-full'>
