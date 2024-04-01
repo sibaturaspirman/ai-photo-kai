@@ -307,7 +307,7 @@ export default function GenerateAmero() {
                 </div> */}
                 <div className='relative mt-2 lg:mt-10 w-full'>
                     <div className='relative w-full hiddenx'>
-                        <label htmlFor="choose_gender" className={`block mb-0 lg:mb-5 lg:text-5xl text-center font-bold text-white ${poppins.className}`}>I am</label>
+                        <label htmlFor="choose_gender" className={`block mb-5 lg:mb-5 text-2xl lg:text-5xl text-center font-bold text-white ${poppins.className}`}>I am</label>
                         <div>
                             {/* GENDER FIX */}
                             <ul className='choose2-amero'>
@@ -316,28 +316,27 @@ export default function GenerateAmero() {
                                     id='choose_gender1'
                                     type="radio"
                                     name='choose_gender'
-                                    value="woman"
+                                    value="male"
                                     onChange={(e) => setStyleGender(e.target.value)}
                                     />
-                                    <label htmlFor="choose_gender1" className='text-2xl lg:h-[140px] lg:text-4xl'>Female</label>
+                                    <label htmlFor="choose_gender1" className='text-2xl lg:h-[140px] lg:text-4xl'>Male</label>
                                 </li>
                                 <li>
                                     <input
                                     id='choose_gender2'
                                     type="radio"
                                     name='choose_gender'
-                                    value="hijab"
+                                    value="female"
                                     onChange={(e) => setStyleGender(e.target.value)}
                                     />
-                                    <label htmlFor="choose_gender2" className='text-2xl lg:h-[140px] lg:text-4xl'>Female with Hijab</label>
+                                    <label htmlFor="choose_gender2" className='text-2xl lg:h-[140px] lg:text-4xl'>Female</label>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <div className='relative w-full mt-8 lg:mt-20'>
+                    {/* <div className='relative w-full mt-8 lg:mt-20'>
                         <label htmlFor="choose_style1" className={`block mb-0 lg:mb-5 lg:text-5xl text-center font-bold text-white ${poppins.className}`}>Pick Your Style</label>
                         <div className='overflow-auto lg:px-2'>
-                            {/* STYLE SEMENTARA */}
                             <ul className='choose-amero'>
                             <li>
                                 <input
@@ -398,14 +397,14 @@ export default function GenerateAmero() {
                             </li>
                             </ul>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
                 {/* {prompt} */}
                 {/* {promptCombine} */}
                 {/* {CGF} */}
                 {/* {numSteps} */}
 
-                {styleGender && character &&
+                {styleGender &&
                     <div className="relative w-full flex justify-center items-center lg:mt-10">
                         <button className="relative mx-auto w-[60%] flex justify-center items-center" onClick={generateAI}>
                             <Image src='/kai/btn-generate.png' width={480} height={96} alt='Zirolu' className='w-full' priority />
