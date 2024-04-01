@@ -435,7 +435,7 @@ export default function Result() {
 
                     <div className='w-full'>
                         <div className="relative w-[50%] mx-auto flex justify-center items-center flex-col">
-                            <Link href='/amero/generate' className="relative w-full mx-auto flex justify-center items-center">
+                            <Link href='/generate' className="relative w-full mx-auto flex justify-center items-center">
                                 <Image src='/btn-retake.png' width={410} height={96} alt='Zirolu' className='w-full' priority />
                             </Link>
                         </div>
