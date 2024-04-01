@@ -377,9 +377,9 @@ export default function Result() {
             {/* QR */}
 
             <div className={generateQR ? `opacity-0 pointer-events-none` : ''}>
-                <h1 className={`text-center text-2xl font-bold mt-5 lg:mt-0 lg:text-5xl mb-5 lg:mb-5 ${poppins.className}`}>YOU LOOKS AMAZING!</h1>
+                <h1 className={`text-center text-2xl font-bold mt-20 lg:mt-0 lg:text-5xl mb-2 lg:mb-5 ${poppins.className}`}>YOU LOOKS AMAZING!</h1>
                 {imageResultAI && 
-                <div className='relative w-[55%] mt-4 mx-auto flex justify-center items-center  border-2 border-[#ffffff] rounded-sm' onClick={downloadImageAI}>
+                <div className='relative w-[56%] mt-2 mx-auto flex justify-center items-center  border-2 border-[#ffffff] rounded-sm' onClick={downloadImageAI}>
                     <div className='relative' id='capture' ref={(el) => (componentRef = el)}>
                         {/* <img src={imageResultAI} className='block'></img> */}
                         <Image src={imageResultAI}  width={420} height={689} alt='Zirolu' className='relative block w-full'></Image> 
