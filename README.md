@@ -1,5 +1,8 @@
 ## HAVE TO FIXED
-1. 
+1. pilihan staisun
+2. loading fun fact
+3. pilih opsi
+
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
