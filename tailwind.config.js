@@ -14,6 +14,7 @@ module.exports = {
       },
     },
     animation: {
+      upDownCepet: "upDownCepet 400ms ease infinite alternate",
       upDown: "upDown 2700ms ease infinite alternate",
       upDown2: "upDown2 2100ms ease infinite alternate",
       upDown3: "upDown 3700ms ease infinite alternate",
@@ -44,6 +45,10 @@ module.exports = {
       upDown2: {
         "0%": { transform: "translateY(-5%)" },
         "100%": { transform: "translateY(5%)" },
+      },
+      upDownCepet: {
+        "0%": { transform: "translateY(10%)" },
+        "100%": { transform: "translateY(-10%)" },
       },
       countdown: {
         "0%": { transform: "translateY(35%)"},

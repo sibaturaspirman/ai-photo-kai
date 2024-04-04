@@ -80,11 +80,11 @@ export default function GenerateAmero() {
         
         if(styleGender =='male'){
             setTimeout(() => {
-                generateImageSwap(styleGender, getRandomInt(0, 11))
+                generateImageSwap(character, styleGender, getRandomInt(0, 11))
             }, 500);
         }else if(styleGender =='female'){
             setTimeout(() => {
-                generateImageSwap(styleGender, getRandomInt(0, 10))
+                generateImageSwap(character, styleGender, getRandomInt(0, 10))
             }, 500);
         }
 
@@ -182,10 +182,11 @@ export default function GenerateAmero() {
     }))
 
 
-    const generateImageSwap = async (gender, number) => {
+    const generateImageSwap = async (character, gender, number) => {
         // console.log(gender)
         // console.log(number)
-        const urlGambar = 'https://ai.mudikbersamakai.com/kai/style/'+gender+'-'+number+'.jpeg'
+        // const urlGambar = 'https://ai.mudikbersamakai.com/kai/style/'+gender+'-'+number+'.jpeg'
+        const urlGambar = character;
         console.log(urlGambar)
         setNumProses(2)
         reset2();
@@ -254,24 +255,18 @@ export default function GenerateAmero() {
                             <Image src='/loading.png' width={770} height={714} alt='Zirolu' className='w-full' priority />
                         </div>
                     </div> */}
-                    <div className='relative w-[250px] h-[250px] lg:w-[450px] lg:h-[450px] overflow-hidden'>
-                        <div className={`animate-ameroloading absolute left-0 top-0 w-[6480px] mx-auto flex justify-center items-center pointer-events-none ${character == 'amero' ? '' : 'opacity-0'}`}>
-                            <Image src='/amero/amero-loading.png' width={6480} height={405} alt='Zirolu' className='w-full' priority />
-                        </div>
-                        <div className={`animate-lavaniloading absolute left-0 top-0 w-[6480px] mx-auto flex justify-center items-center pointer-events-none ${character == 'lavani' ? '' : 'opacity-0'}`}>
-                            <Image src='/amero/lavani-loading.png' width={6480} height={405} alt='Zirolu' className='w-full' priority />
-                        </div>
-                        <div className={`animate-morraineloading absolute left-0 top-0 w-[3645px] mx-auto flex justify-center items-center pointer-events-none ${character == 'morraine' ? '' : 'opacity-0'}`}>
-                            <Image src='/amero/morraine-loading.png' width={3645} height={405} alt='Zirolu' className='w-full' priority />
+                    <div className='relative w-[80%] overflow-hidden'>
+                        <div className='relative w-full'>
+                            <Image src='/kai/funfact.png' width={770} height={574} alt='Zirolu' className='w-full' priority />
                         </div>
                     </div>
-                    <div className='relative py-2 px-4 mt-5 lg:mt-24 lg:p-5 lg:text-4xl border-2 border-[#ffffff] text-center bg-slate-500 text-[#fff] lg:font-bold'>
+                    <div className='animate-upDownCepet relative py-2 px-4 mt-5 lg:mt-24 lg:p-5 lg:text-4xl border-2 border-[#9B07C9] text-center bg-[#630082] text-[#fff] lg:font-bold rounded-lg'>
                         <p>{`Please wait, loading...`}</p>
                         <p>{`Process : ${(elapsedTime / 1000).toFixed(2)} seconds (${numProses} of 2)`}</p>
                         {error}
                     </div>
 
-                    <pre className='relative py-2 px-4 mt-5 lg:mt-24 border-2 border-[#ffffff] text-left bg-slate-500 text-[#fff] text-xs lg:text-3xl overflow-auto no-scrollbar h-[100px] w-[60%] mx-auto'>
+                    <pre className='relative py-2 px-4 mt-5 lg:mt-24 border-2 border-[#9B07C9] text-left bg-[#630082] text-[#fff] text-xs lg:text-3xl overflow-auto no-scrollbar h-[100px] w-[60%] mx-auto rounded-lg'>
                         <code>
                         {logs.filter(Boolean).join('\n')}
                         </code>
@@ -318,25 +313,26 @@ export default function GenerateAmero() {
                             </ul>
                         </div>
                     </div>
-                    {/* <div className='relative w-full mt-8 lg:mt-20'>
-                        <label htmlFor="choose_style1" className={`block mb-0 lg:mb-5 lg:text-5xl text-center font-bold text-white ${poppins.className}`}>Pick Your Style</label>
-                        <div className='overflow-auto lg:px-2'>
-                            <ul className='choose-amero'>
+                    <div className='relative w-full mt-8 lg:mt-20'>
+                        {styleGender &&
+                        <label htmlFor="choose_style1" className={`block mb-5 lg:mb-5 text-2xl lg:text-5xl text-center font-bold text-white ${poppins.className}`}>Pick Your Style</label>
+                        }
+                        <ul className={`${styleGender != null && styleGender === 'male' ? '' : 'hidden-anjir'} choose-amero `}>
                             <li>
                                 <input
                                 id='choose_style1'
                                 type="radio"
                                 name='choose_style'
-                                value="morraine"
+                                value="https://ai.mudikbersamakai.com/kai/style/male-0.jpeg"
                                 onChange={(e) => setCharacter(e.target.value)}
                                 />
                                 <label htmlFor="choose_style1">
                                 <Image
                                     className="relative h-auto w-full"
-                                    src="/amero/style1.png"
+                                    src="/kai/style/male-opsi-0.png"
                                     alt="icon"
-                                    width={98}
-                                    height={98}
+                                    width={429}
+                                    height={531}
                                     priority
                                 />
                                 </label>
@@ -346,16 +342,16 @@ export default function GenerateAmero() {
                                 id='choose_style2'
                                 type="radio"
                                 name='choose_style'
-                                value="amero"
+                                value="https://ai.mudikbersamakai.com/kai/style/male-1.jpeg"
                                 onChange={(e) => setCharacter(e.target.value)}
                                 />
                                 <label htmlFor="choose_style2">
                                 <Image
                                     className="relative h-auto w-full"
-                                    src="/amero/style2.png"
+                                    src="/kai/style/male-opsi-1.png"
                                     alt="icon"
-                                    width={98}
-                                    height={98}
+                                    width={429}
+                                    height={531}
                                     priority
                                 />
                                 </label>
@@ -365,33 +361,433 @@ export default function GenerateAmero() {
                                 id='choose_style3'
                                 type="radio"
                                 name='choose_style'
-                                value="lavani"
+                                value="https://ai.mudikbersamakai.com/kai/style/male-2.jpeg"
                                 onChange={(e) => setCharacter(e.target.value)}
                                 />
                                 <label htmlFor="choose_style3">
                                 <Image
                                     className="relative h-auto w-full"
-                                    src="/amero/style3.png"
+                                    src="/kai/style/male-opsi-2.png"
                                     alt="icon"
-                                    width={98}
-                                    height={98}
+                                    width={429}
+                                    height={531}
                                     priority
                                 />
                                 </label>
                             </li>
-                            </ul>
-                        </div>
-                    </div> */}
-                    <div className='relative w-full mt-8 mb-10'>
-                        <Image src='/kai/list-style.png' width={1840} height={198} alt='Zirolu' className='w-full' priority />
+                            <li>
+                                <input
+                                id='choose_style4'
+                                type="radio"
+                                name='choose_style'
+                                value="https://ai.mudikbersamakai.com/kai/style/male-3.jpeg"
+                                onChange={(e) => setCharacter(e.target.value)}
+                                />
+                                <label htmlFor="choose_style4">
+                                <Image
+                                    className="relative h-auto w-full"
+                                    src="/kai/style/male-opsi-3.png"
+                                    alt="icon"
+                                    width={429}
+                                    height={531}
+                                    priority
+                                />
+                                </label>
+                            </li>
+                            <li>
+                                <input
+                                id='choose_style5'
+                                type="radio"
+                                name='choose_style'
+                                value="https://ai.mudikbersamakai.com/kai/style/male-4.jpeg"
+                                onChange={(e) => setCharacter(e.target.value)}
+                                />
+                                <label htmlFor="choose_style5">
+                                <Image
+                                    className="relative h-auto w-full"
+                                    src="/kai/style/male-opsi-4.png"
+                                    alt="icon"
+                                    width={429}
+                                    height={531}
+                                    priority
+                                />
+                                </label>
+                            </li>
+                            <li>
+                                <input
+                                id='choose_style6'
+                                type="radio"
+                                name='choose_style'
+                                value="https://ai.mudikbersamakai.com/kai/style/male-5.jpeg"
+                                onChange={(e) => setCharacter(e.target.value)}
+                                />
+                                <label htmlFor="choose_style6">
+                                <Image
+                                    className="relative h-auto w-full"
+                                    src="/kai/style/male-opsi-5.png"
+                                    alt="icon"
+                                    width={429}
+                                    height={531}
+                                    priority
+                                />
+                                </label>
+                            </li>
+                            <li>
+                                <input
+                                id='choose_style7'
+                                type="radio"
+                                name='choose_style'
+                                value="https://ai.mudikbersamakai.com/kai/style/male-6.jpeg"
+                                onChange={(e) => setCharacter(e.target.value)}
+                                />
+                                <label htmlFor="choose_style7">
+                                <Image
+                                    className="relative h-auto w-full"
+                                    src="/kai/style/male-opsi-6.png"
+                                    alt="icon"
+                                    width={429}
+                                    height={531}
+                                    priority
+                                />
+                                </label>
+                            </li>
+                            <li>
+                                <input
+                                id='choose_style8'
+                                type="radio"
+                                name='choose_style'
+                                value="https://ai.mudikbersamakai.com/kai/style/male-7.jpeg"
+                                onChange={(e) => setCharacter(e.target.value)}
+                                />
+                                <label htmlFor="choose_style8">
+                                <Image
+                                    className="relative h-auto w-full"
+                                    src="/kai/style/male-opsi-7.png"
+                                    alt="icon"
+                                    width={429}
+                                    height={531}
+                                    priority
+                                />
+                                </label>
+                            </li>
+                            <li>
+                                <input
+                                id='choose_style9'
+                                type="radio"
+                                name='choose_style'
+                                value="https://ai.mudikbersamakai.com/kai/style/male-8.jpeg"
+                                onChange={(e) => setCharacter(e.target.value)}
+                                />
+                                <label htmlFor="choose_style9">
+                                <Image
+                                    className="relative h-auto w-full"
+                                    src="/kai/style/male-opsi-8.png"
+                                    alt="icon"
+                                    width={429}
+                                    height={531}
+                                    priority
+                                />
+                                </label>
+                            </li>
+                            <li>
+                                <input
+                                id='choose_style10'
+                                type="radio"
+                                name='choose_style'
+                                value="https://ai.mudikbersamakai.com/kai/style/male-9.jpeg"
+                                onChange={(e) => setCharacter(e.target.value)}
+                                />
+                                <label htmlFor="choose_style10">
+                                <Image
+                                    className="relative h-auto w-full"
+                                    src="/kai/style/male-opsi-9.png"
+                                    alt="icon"
+                                    width={429}
+                                    height={531}
+                                    priority
+                                />
+                                </label>
+                            </li>
+                            <li>
+                                <input
+                                id='choose_style11'
+                                type="radio"
+                                name='choose_style'
+                                value="https://ai.mudikbersamakai.com/kai/style/male-10.jpeg"
+                                onChange={(e) => setCharacter(e.target.value)}
+                                />
+                                <label htmlFor="choose_style11">
+                                <Image
+                                    className="relative h-auto w-full"
+                                    src="/kai/style/male-opsi-10.png"
+                                    alt="icon"
+                                    width={429}
+                                    height={531}
+                                    priority
+                                />
+                                </label>
+                            </li>
+                            <li>
+                                <input
+                                id='choose_style12'
+                                type="radio"
+                                name='choose_style'
+                                value="https://ai.mudikbersamakai.com/kai/style/male-11.jpeg"
+                                onChange={(e) => setCharacter(e.target.value)}
+                                />
+                                <label htmlFor="choose_style12">
+                                <Image
+                                    className="relative h-auto w-full"
+                                    src="/kai/style/male-opsi-11.png"
+                                    alt="icon"
+                                    width={429}
+                                    height={531}
+                                    priority
+                                />
+                                </label>
+                            </li>
+                        </ul>
+                        <ul className={`${styleGender != null && styleGender === 'female' ? '' : 'hidden-anjir'} choose-amero `}>
+                            <li>
+                                <input
+                                id='choose_style_fem_1'
+                                type="radio"
+                                name='choose_style'
+                                value="https://ai.mudikbersamakai.com/kai/style/female-0.jpeg"
+                                onChange={(e) => setCharacter(e.target.value)}
+                                />
+                                <label htmlFor="choose_style_fem_1">
+                                <Image
+                                    className="relative h-auto w-full"
+                                    src="/kai/style/female-opsi-0.png"
+                                    alt="icon"
+                                    width={429}
+                                    height={531}
+                                    priority
+                                />
+                                </label>
+                            </li>
+                            <li>
+                                <input
+                                id='choose_style_fem_2'
+                                type="radio"
+                                name='choose_style'
+                                value="https://ai.mudikbersamakai.com/kai/style/female-1.jpeg"
+                                onChange={(e) => setCharacter(e.target.value)}
+                                />
+                                <label htmlFor="choose_style_fem_2">
+                                <Image
+                                    className="relative h-auto w-full"
+                                    src="/kai/style/female-opsi-1.png"
+                                    alt="icon"
+                                    width={429}
+                                    height={531}
+                                    priority
+                                />
+                                </label>
+                            </li>
+                            <li>
+                                <input
+                                id='choose_style_fem_3'
+                                type="radio"
+                                name='choose_style'
+                                value="https://ai.mudikbersamakai.com/kai/style/female-2.jpeg"
+                                onChange={(e) => setCharacter(e.target.value)}
+                                />
+                                <label htmlFor="choose_style_fem_3">
+                                <Image
+                                    className="relative h-auto w-full"
+                                    src="/kai/style/female-opsi-2.png"
+                                    alt="icon"
+                                    width={429}
+                                    height={531}
+                                    priority
+                                />
+                                </label>
+                            </li>
+                            <li>
+                                <input
+                                id='choose_style_fem_4'
+                                type="radio"
+                                name='choose_style'
+                                value="https://ai.mudikbersamakai.com/kai/style/female-3.jpeg"
+                                onChange={(e) => setCharacter(e.target.value)}
+                                />
+                                <label htmlFor="choose_style_fem_4">
+                                <Image
+                                    className="relative h-auto w-full"
+                                    src="/kai/style/female-opsi-3.png"
+                                    alt="icon"
+                                    width={429}
+                                    height={531}
+                                    priority
+                                />
+                                </label>
+                            </li>
+                            <li>
+                                <input
+                                id='choose_style_fem_5'
+                                type="radio"
+                                name='choose_style'
+                                value="https://ai.mudikbersamakai.com/kai/style/female-4.jpeg"
+                                onChange={(e) => setCharacter(e.target.value)}
+                                />
+                                <label htmlFor="choose_style_fem_5">
+                                <Image
+                                    className="relative h-auto w-full"
+                                    src="/kai/style/female-opsi-4.png"
+                                    alt="icon"
+                                    width={429}
+                                    height={531}
+                                    priority
+                                />
+                                </label>
+                            </li>
+                            <li>
+                                <input
+                                id='choose_style_fem_6'
+                                type="radio"
+                                name='choose_style'
+                                value="https://ai.mudikbersamakai.com/kai/style/female-5.jpeg"
+                                onChange={(e) => setCharacter(e.target.value)}
+                                />
+                                <label htmlFor="choose_style_fem_6">
+                                <Image
+                                    className="relative h-auto w-full"
+                                    src="/kai/style/female-opsi-5.png"
+                                    alt="icon"
+                                    width={429}
+                                    height={531}
+                                    priority
+                                />
+                                </label>
+                            </li>
+                            <li>
+                                <input
+                                id='choose_style_fem_7'
+                                type="radio"
+                                name='choose_style'
+                                value="https://ai.mudikbersamakai.com/kai/style/female-6.jpeg"
+                                onChange={(e) => setCharacter(e.target.value)}
+                                />
+                                <label htmlFor="choose_style_fem_7">
+                                <Image
+                                    className="relative h-auto w-full"
+                                    src="/kai/style/female-opsi-6.png"
+                                    alt="icon"
+                                    width={429}
+                                    height={531}
+                                    priority
+                                />
+                                </label>
+                            </li>
+                            <li>
+                                <input
+                                id='choose_style_fem_8'
+                                type="radio"
+                                name='choose_style'
+                                value="https://ai.mudikbersamakai.com/kai/style/female-7.jpeg"
+                                onChange={(e) => setCharacter(e.target.value)}
+                                />
+                                <label htmlFor="choose_style_fem_8">
+                                <Image
+                                    className="relative h-auto w-full"
+                                    src="/kai/style/female-opsi-7.png"
+                                    alt="icon"
+                                    width={429}
+                                    height={531}
+                                    priority
+                                />
+                                </label>
+                            </li>
+                            <li>
+                                <input
+                                id='choose_style_fem_9'
+                                type="radio"
+                                name='choose_style'
+                                value="https://ai.mudikbersamakai.com/kai/style/female-8.jpeg"
+                                onChange={(e) => setCharacter(e.target.value)}
+                                />
+                                <label htmlFor="choose_style_fem_9">
+                                <Image
+                                    className="relative h-auto w-full"
+                                    src="/kai/style/female-opsi-8.png"
+                                    alt="icon"
+                                    width={429}
+                                    height={531}
+                                    priority
+                                />
+                                </label>
+                            </li>
+                            <li>
+                                <input
+                                id='choose_style_fem_10'
+                                type="radio"
+                                name='choose_style'
+                                value="https://ai.mudikbersamakai.com/kai/style/female-9.jpeg"
+                                onChange={(e) => setCharacter(e.target.value)}
+                                />
+                                <label htmlFor="choose_style_fem_10">
+                                <Image
+                                    className="relative h-auto w-full"
+                                    src="/kai/style/female-opsi-9.png"
+                                    alt="icon"
+                                    width={429}
+                                    height={531}
+                                    priority
+                                />
+                                </label>
+                            </li>
+                            <li>
+                                <input
+                                id='choose_style_fem_11'
+                                type="radio"
+                                name='choose_style'
+                                value="https://ai.mudikbersamakai.com/kai/style/female-10.jpeg"
+                                onChange={(e) => setCharacter(e.target.value)}
+                                />
+                                <label htmlFor="choose_style_fem_11">
+                                <Image
+                                    className="relative h-auto w-full"
+                                    src="/kai/style/female-opsi-10.png"
+                                    alt="icon"
+                                    width={429}
+                                    height={531}
+                                    priority
+                                />
+                                </label>
+                            </li>
+                            <li>
+                                <input
+                                id='choose_style_fem_12'
+                                type="radio"
+                                name='choose_style'
+                                value="https://ai.mudikbersamakai.com/kai/style/female-11.jpeg"
+                                onChange={(e) => setCharacter(e.target.value)}
+                                />
+                                <label htmlFor="choose_style_fem_12">
+                                <Image
+                                    className="relative h-auto w-full"
+                                    src="/kai/style/female-opsi-11.png"
+                                    alt="icon"
+                                    width={429}
+                                    height={531}
+                                    priority
+                                />
+                                </label>
+                            </li>
+                        </ul>
                     </div>
+                    {/* <div className='relative w-full mt-8 mb-10'>
+                        <Image src='/kai/list-style.png' width={1840} height={198} alt='Zirolu' className='w-full' priority />
+                    </div> */}
                 </div>
                 {/* {prompt} */}
                 {/* {promptCombine} */}
                 {/* {CGF} */}
                 {/* {numSteps} */}
 
-                {styleGender &&
+                {styleGender && character &&
                     <div className="relative w-full flex justify-center items-center lg:mt-10">
                         <button className="relative mx-auto w-[60%] flex justify-center items-center" onClick={generateAI}>
                             <Image src='/kai/btn-generate.png' width={480} height={96} alt='Zirolu' className='w-full' priority />
