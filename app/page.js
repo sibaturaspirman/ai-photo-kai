@@ -23,9 +23,9 @@ export default function AmeroHome() {
   return (
     <main className="flex fixed h-full w-full bg-kai overflow-auto flex-col items-center pt-16 pb-5 px-5 lg:pt-12 lg:px-20">
       <TopLogoAmeroBig></TopLogoAmeroBig>
-      <h1 className={`text-center text-4xl font-bold mt-0 mb-3 lg:mt-0 lg:text-7xl lg:mb-5 ${poppins.className}`}>AI PHOTOBOOTH</h1>
-      <div className="relative w-[90%] flex justify-center items-center mt-5 mb-10 lg:mt-20 lg:mb-14">
-      <div className='relative w-full hiddenx'>
+      <h1 className={`text-center text-4xl font-bold mt-3 mb-0 lg:mt-0 lg:text-7xl lg:mb-5 ${poppins.className}`}>AI PHOTOBOOTH</h1>
+      <div className="relative w-[90%] mt-5 mb-10 lg:mt-20 lg:mb-14">
+        <div className='relative w-full hiddenx'>
             <label htmlFor="choose_stasiun" className={`block mb-5 lg:mb-5 text-2xl lg:text-5xl text-center font-bold text-white ${poppins.className}`}>Pilih Lokasi Stasiun</label>
             <div>
                 <ul className='choose2-amero'>
@@ -79,6 +79,10 @@ export default function AmeroHome() {
           <Image src='/kai/btn-taptostart.png' width={410} height={96} alt='Zirolu' className='w-full' priority />
         </div>
       </div>}
+      <div className='relative w-full mt-8 mb-10'>
+            <Image src='/kai/list-style-new-1.png' width={1840} height={198} alt='Zirolu' className='w-full' priority />
+            <Image src='/kai/list-style-new-2.png' width={1840} height={198} alt='Zirolu' className='w-full mt-5' priority />
+        </div>
     </main>
   );
 }
