@@ -1,5 +1,5 @@
 ## HAVE TO FIXED
-1. pilihan staisun
+1. pilihan staisun ✅
 2. loading fun fact  ✅
 3. pilih opsi ✅
 

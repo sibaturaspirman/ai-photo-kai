@@ -60,6 +60,7 @@ export default function Result() {
     const [payload, setPayload] = useState({
       name: getCookie('name'),
       phone: getCookie('phone'),
+      stasiun: getCookie('stasiun'),
     });
     // const [payload, setPayload] = useState({
     //     name: 'AI ZIROLU DEMO',
@@ -112,7 +113,7 @@ export default function Result() {
                 name:payload.name,
                 phone:payload.phone,
                 image:linkQR,
-                location:'Gambir'
+                location:payload.stasiun
             }),
             headers: {
                 'Authorization': 'de2e0cc3-65da-48a4-8473-484f29386d61:xZC8Zo4DAWR5Yh6Lrq4QE3aaRYJl9lss',
@@ -372,7 +373,7 @@ export default function Result() {
                     </div>
                     </div> */}
                     {/* <Link href='/' className='text-center font-semibold text-lg mt-2 p-20' onClick={()=>{setGenerateQR(null)}}>Tap here to close</Link> */}
-                    <a href='/' className='text-center font-semibold text-4xl py-20 pb-36 p-40'>Tap here to close</a>
+                    <a href='/home' className='text-center font-semibold text-4xl py-20 pb-36 p-40'>Tap here to close</a>
                 </div>
             }
             {/* QR */}
