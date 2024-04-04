@@ -373,7 +373,7 @@ export default function Result() {
                     </div>
                     </div> */}
                     {/* <Link href='/' className='text-center font-semibold text-lg mt-2 p-20' onClick={()=>{setGenerateQR(null)}}>Tap here to close</Link> */}
-                    <a href='/home' className='text-center font-semibold text-4xl py-20 pb-36 p-40'>Tap here to close</a>
+                    <a href='/' className='text-center font-semibold text-4xl py-20 pb-36 p-40'>Tap here to close</a>
                 </div>
             }
             {/* QR */}
